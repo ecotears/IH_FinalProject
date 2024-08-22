@@ -13,6 +13,12 @@ In `Spain`, the number was **286 000** of animals abandoned from known data only
 This is why, building a model that efficiently and correctly predicts the adoption speed of abandoned animals could greatly help shelters and organizations to allocate their resources better or promote certain animals with predicted slow adoptions more.
 
 We also developed a web application for our prediction tool using Streamlit and then deployed it on Heroku: Pet Adoption Prediction Application
+## Summary of final output
+
+After comparing different classification models, and various versions with small details of difference. The final chosen model was a **Random Forest** with **`42%`** accuracy. However the recall rate for group 3 (no adoption after 100 days) was almost **`70%`**!
+
+I have built a simple app in Streamlit where an end user can upload new animals by specifying their characteristics and the **app will return an adoption speed prediction** for the user.
+
 ## Variable context
 
 **`General & key`**
