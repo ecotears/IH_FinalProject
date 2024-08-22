@@ -7,9 +7,9 @@ from textblob import TextBlob
 # ------------------------------------------------- Necessary steps for data processing and collection ------------------------
 appearance_image = Image.open('appearance.png')
 
-dataset = pd.read_csv('/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Dataset/train.csv/train.csv')
-breed_dataset = pd.read_csv('/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Dataset/BreedLabels.csv')
-color_dataset = pd.read_csv('/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Dataset/ColorLabels.csv')
+dataset = pd.read_csv('../Datasets/CSV files/train.csv')
+breed_dataset = pd.read_csv('../Datasets/CSV files/BreedLabels.csv')
+color_dataset = pd.read_csv('../Datasets/CSV files/ColorLabels.csv')
 max_age_possible = dataset['Age'].max()
 
 def collect_input_data ():
@@ -49,7 +49,7 @@ def collect_input_data ():
 
 
 
-model_path = '/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Streamlit app/final_randomforest_model.joblib'
+model_path = '../Streamlit app/final_randomforest_model.joblib'
 model = joblib.load(model_path)
 
 # ------------------------------------------------------ Actual app user interface --------------------------------------------
@@ -66,7 +66,7 @@ def header_with_image(header, image_url):
 
 
 # This is the banner
-st.image(Image.open('/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Streamlit app/Banner.jpg'), use_column_width=True)
+st.image(Image.open('../Streamlit app/Banner.jpg'), use_column_width=True)
 
 # Title of the app
 st.title("Animal Adoption Speed Prediction")
@@ -85,7 +85,7 @@ age = st.slider("Age of the Pet (months)", 0, max_age_possible, 0)  # Age in mon
 name = st.text_input("If it has a name, what is it?")
 
 st.markdown("---")
-header_with_image("Appearance related", '/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Streamlit app/appearance.png')
+header_with_image("Appearance related", '../Streamlit app/appearance.png')
 
 if Type=='Dog':
     breed_names_available = ['Select Option'] + breed_dataset[breed_dataset['Type'] ==1]['BreedName'].unique().tolist()
@@ -102,20 +102,20 @@ fur_length = st.selectbox("Fur Length", ["Select Option", "Short", "Medium", "Lo
 
 
 st.markdown("---")
-header_with_image('Health related', '/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Streamlit app/health.png')
+header_with_image('Health related', '../Streamlit app/health.png')
 vaccinated = st.selectbox("Vaccinated", ["Select Option", "Yes", "No", "Not Sure"])
 dewormed = st.selectbox("Dewormed", ["Select Option", "Yes", "No", "Not Sure"])
 sterilized = st.selectbox("Sterilized", ["Select Option", "Yes", "No", "Not Sure"])
 health = st.selectbox("Health Condition", ["Select Option", "Healthy", "Minor Injury", "Serious Injury"])
 
 st.markdown("---")
-header_with_image('Informational', '/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Streamlit app/informational.png')
+header_with_image('Informational', '../Streamlit app/informational.png')
 photo_amt = st.slider("Number of Photos you plan to include", 0, 30, 1)
 video_amt = st.slider("Number of Videos you plan to include", 0, 30, 1)
 description = st.text_area("Description of the Pet")
 
 st.markdown("---")
-header_with_image('Miscellaneous','/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Streamlit app/miscellaneous.png')
+header_with_image('Miscellaneous','../Streamlit app/miscellaneous.png')
 quantity = st.number_input("Choose 1 if it is just one animal, if group choose appropriate number", min_value=1, max_value=100000, value=1)
 fee = st.number_input("Adoption Fee", min_value=0, max_value=100000, value=0)
 
@@ -159,7 +159,7 @@ if st.button("Predict Adoption Speed"):
     st.write(f"Predicted Adoption Speed:")
     st.markdown(f'<p style="color:green; font-weight:bold;">{prediction_output}</p>', unsafe_allow_html=True)
 
-st.image(Image.open('/home/ecotears/Ironhack/Ironhack_all/Ironhack_Final_Project/Streamlit app/Banner2.jpg'), use_column_width=True)
+st.image(Image.open('../Streamlit app/Banner2.jpg'), use_column_width=True)
 
 st.markdown(
     """
