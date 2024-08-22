@@ -1,0 +1,2 @@
+Age;Gender;MaturitySize;FurLength;Quantity;Fee;VideoAmt;Description;PhotoAmt;AdoptionSpeed;HasName?;Sentiment_score;Sentiment_magnitude;AnimalType;Vaccinated_label;Dewormed_label;Sterilized_label;Healthy;Color1;Color2;Breed1;Breed2
+2;Female;Medium;Medium;1;0;0;For Adoption;5.0;1;Has_Name;0.0;0.0;Dog;No;No;No;Healthy;Brown;White;Mixed Breed;Mixed Breed
