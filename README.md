@@ -1,9 +1,6 @@
 
 # Pet Adoption Speed Prediction - Final Project
 
-
-
-
 ## Introduction
 For the final project, I decided to work on a model that could actually improve or solve a current social problem. That's why I chose the **PetFinder Adoption Dataset** from **Kaggle**.
 
@@ -17,7 +14,11 @@ We also developed a web application for our prediction tool using Streamlit and 
 
 After comparing different classification models, and various versions with small details of difference. The final chosen model was a **Random Forest** with **`42%`** accuracy. However the recall rate for group 3 (no adoption after 100 days) was almost **`70%`**!
 
+![Captura de pantalla 2024-08-22 201025](https://github.com/user-attachments/assets/f7fbe438-8b63-4a6c-b922-a3ce534b3315)
+
 I have built a simple app in Streamlit where an end user can upload new animals by specifying their characteristics and the **app will return an adoption speed prediction** for the user.
+
+https://github.com/user-attachments/assets/2944057d-7713-4db0-96b1-ed3696efc0c1
 
 ## Variable context
 
